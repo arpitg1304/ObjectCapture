@@ -23,6 +23,8 @@ Communication channel used is ROS
 2.) Clone this repository using git clone https://github.com/arpitg1304/ObjectCapture.git
 
 3.) Interfacing ROS kinetic with v-rep: http://analuciacruz.me/articles/RosInterface_kinetic/ 
+
+
 https://github.com/CoppeliaRobotics/v_repExtRosInterface
 
 
