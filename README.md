@@ -17,6 +17,13 @@ This project is divided in four main sub-tasks:
 
 # Setup Instructions and Dependencies:
 
-The simulation environment used is V-Rep in Linux environment: http://www.coppeliarobotics.com/downloads.html
+1.) The simulation environment used is V-Rep in Linux environment: http://www.coppeliarobotics.com/downloads.html
 Communication channel used is ROS
+
+2.) Clone this repository using git clone https://github.com/arpitg1304/ObjectCapture.git
+
+3.) Interfacing ROS kinetic with v-rep: http://analuciacruz.me/articles/RosInterface_kinetic/ 
+https://github.com/CoppeliaRobotics/v_repExtRosInterface
+
+
 
