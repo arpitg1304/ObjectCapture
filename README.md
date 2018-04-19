@@ -17,6 +17,21 @@ This project is divided in four main sub-tasks:
 
 # Setup Instructions and Dependencies:
 
-The simulation environment used is V-Rep in Linux environment: http://www.coppeliarobotics.com/downloads.html
+1.) The simulation environment used is V-Rep in Linux environment: http://www.coppeliarobotics.com/downloads.html
 Communication channel used is ROS
+
+2.) Clone this repository using git clone https://github.com/arpitg1304/ObjectCapture.git
+
+3.) Interfacing ROS kinetic with v-rep: http://analuciacruz.me/articles/RosInterface_kinetic/ 
+
+
+https://github.com/CoppeliaRobotics/v_repExtRosInterface
+
+4.) Start vrep, load scene1.ttt in V-Rep, do not run the simulation from V-Rep start button
+
+5.) Run the python file getData.py (dependencies: PIL, CV2 libraries) in a terminal which will create a folder in the system and start saving the kinect sensor images as soon as the simulation starts(explained in next step)
+
+6.) In a separate terminal, run object_cpture.py: The functonality of this file is controlled using the keyboard. Press 'm' to stop the simulation; press 'n' --> prompt will ask for z,x velocity (input for example 5,5 and hit enter), then enter time of flight(enter example 5 and hit enter). These inputs will start the simulation, if you check the folder created by the getDat.py now, you will find lots of images saved there if everything is working fine
+
+
 
