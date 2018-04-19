@@ -32,6 +32,7 @@ from sensor_msgs.msg import Image
 
 VERBOSE=False
 
+
 class image_feature:
 
     def __init__(self, folder_name):
@@ -65,14 +66,15 @@ class image_feature:
         if VERBOSE :
             print '%s detector found: %s points in: %s sec.'%(method,
                                                               len(featPoints),time2-time1)
-
-        cv2.imwrite(self.folder_name + "/" + str(time2)+".png", img2)
+        if len(str(time2)) > 12:
+            cv2.imwrite(self.folder_name + "/" + str(time2)+".png", img2)
+        
 
 def main(args):
     a = datetime.datetime.now()
 
 
-    folder_name = "/home/arpit/502 project/v rep/rgb" +str(a.day)+ '_' + str(a.hour)+ '_' + str(a.minute) + '_' + str(a.second)
+    folder_name = "/home/tysawant/RBE-501-Project/data/rgb" +str(a.day)+ '_' + str(a.hour)+ '_' + str(a.minute) + '_' + str(a.second)
 
     print(folder_name)
 
