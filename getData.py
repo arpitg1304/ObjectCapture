@@ -60,43 +60,19 @@ class image_feature:
         image_buffer  = image_buffer.transpose(Image.ROTATE_180)
 
         img2 = np.asarray(image_buffer)
-        #image_np = cv2.imdecode(np_arr, cv2.CV_LOAD_IMAGE_COLOR)
-        #image_np = cv2.imdecode(np_arr, cv2.IMREAD_COLOR) # OpenCV >= 3.0:
-
-        #### Feature detectors using CV2 #### 
-        # "","Grid","Pyramid" + 
-        # "FAST","GFTT","HARRIS","MSER","ORB","SIFT","STAR","SURF"
-
-
-        # method = "GridFAST"
-        # feat_det = cv2.FeatureDetector_create(method)
-        # time1 = time.time()
-        #
-        # # convert np image to grayscale
-        # featPoints = feat_det.detect(
-        #image_np = cv2.cvtColor(image_np, cv2.COLOR_BGR2GRAY)
-        #image_np =  np.reshape(np_arr, (640, 480, 3))
-        #print(image_np.shape)
-        #image_np = cv2.cvtColor(image_np, cv2.COLOR_RGB2BGR)
         time2 = time.time()
 
         if VERBOSE :
             print '%s detector found: %s points in: %s sec.'%(method,
                                                               len(featPoints),time2-time1)
 
-        # for featpoint in featPoints:
-        #     x,y = featpoint.pt
-        #     cv2.circle(image_np,(int(x),int(y)), 3, (0,0,255), -1)
-
-        #cv2.imshow('cv_img', image_np)
-        #cv2.waitKey(2)
         cv2.imwrite(self.folder_name + "/" + str(time2)+".png", img2)
 
 def main(args):
     a = datetime.datetime.now()
 
 
-    folder_name = "/home/arpit/502 project/v rep/" +str(a.day)+ '_' + str(a.hour)+ '_' + str(a.minute) + '_' + str(a.second)
+    folder_name = "/home/arpit/502 project/v rep/rgb" +str(a.day)+ '_' + str(a.hour)+ '_' + str(a.minute) + '_' + str(a.second)
 
     print(folder_name)
 

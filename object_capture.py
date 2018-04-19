@@ -44,32 +44,11 @@ def getch():
 
 def fetchKinect(clientID,depthSTR,rgbSTR):
     errorCodeKinectRGB,kinectRGB=vrep.simxGetObjectHandle(clientID,rgbSTR,vrep.simx_opmode_blocking)
+
     #errorCodeKinectDepth,kinectDepth=vrep.simxGetObjectHandle(clientID,depthSTR,vrep.simx_opmode_blocking)
 
-
-    #errorHere,resolution,image=vrep.simxGetVisionSensorImage(clientID,kinectRGB,0,vrep.simx_opmode_blocking)
-
-    # image_byte_array = array.array('b', image)
-    # image_buffer = I.frombuffer("RGB", (resolution[0],resolution[1]), image_byte_array, "raw", "BGR", 0, 1)
-    # image_buffer  = image_buffer.transpose(Image.FLIP_LEFT_RIGHT)
-    # image_buffer  = image_buffer.transpose(Image.ROTATE_180)
-    # img2 = np.asarray(image_buffer)
-
-    img_time=vrep.simxGetLastCmdTime(clientID)
-
-
-    # img,imgArr=Raftaar.ProcessImage(image,resolution)
-    # rgbArr=np.array(imgArr)
-    #print(len(image))
-
-
-    #print(image.shape)
     #errorHere,resol,depth=vrep.simxGetVisionSensorDepthBuffer(clientID,kinectDepth,vrep.simx_opmode_oneshot_wait)
     #depthArr=np.array(depth)
-
-    #print(image)
-    #return image,img_time
-    return img_time
 
     #fetchKinect('kinect_depth','kinect_rgb')
 
@@ -171,11 +150,6 @@ if __name__ == "__main__":
                     z_req= (a*(x_req**2))+(b*x_req)+c # 2D parabolic equation : z = a*x^2 + b* x + c
                     if z_req < 0 : z_req = 0
                     print(z_req)
-
-
-                # print(time1)
-
-            #vrep.simxStopSimulation(clientID, vrep.simx_opmode_oneshot_wait)
 
             with open('poses.csv','wb') as out:
                 csv_out=csv.writer(out)
