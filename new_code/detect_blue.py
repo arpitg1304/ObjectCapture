@@ -7,9 +7,12 @@ import numpy as np
 
 
 # This drives the program into an infinite loop.
-while(1):
+#while(1):
     # Captures the live stream frame-by-frame
-    frame = cv2.imread('1525145388.52.png')
+def main(arg):
+    #print(arg)
+    #frame = cv2.imread(arg)
+    frame = arg
     # Converts images from BGR to HSV
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     lower_red = np.array([110,50,50])
@@ -35,28 +38,28 @@ while(1):
         print(x,y)
         M = cv2.moments(c)
         center = (int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"]))
-        print(center)
+        #print(center)
 
         # only proceed if the radius meets a minimum size
         #if radius > 10:
             # draw the circle and centroid on the frame,
             # then update the list of tracked points
-        cv2.circle(frame, (int(x), int(y)), int(radius),(0, 255, 255), 2)
-        cv2.circle(frame, center, 5, (0, 0, 255), -1)
+        #cv2.circle(frame, (int(x), int(y)), int(radius),(0, 255, 255), 2)
+        #cv2.circle(frame, center, 5, (0, 0, 255), -1)
+        return center
 
 
 
-    cv2.imshow('frame',frame)
-    #cv2.imshow('mask',mask)
-    #cv2.imshow('res',res)
-
-    # This displays the frame, mask
-    # and res which we created in 3 separate windows.
-    k = cv2.waitKey(5)
-    if k == 27:
-        break
+    # cv2.imshow('frame',frame)
+    # print('kjfbejfe')
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+    # if k == 27:
+    #     break
 
 # Destroys all of the HighGUI windows.
-cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
 
-# release the captured frame
+
+if __name__ == '__main__':
+    main(arg)
